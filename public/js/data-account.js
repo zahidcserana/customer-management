@@ -17,6 +17,11 @@ var DatatableRemoteAjaxDemo = function () {
                             if (typeof raw.data !== 'undefined') {
                                 dataSet = raw.data;
                             }
+                            if (typeof raw.summary !== 'undefined') {
+                                $('#amount_total').html(raw.summary.amount_total);
+                                $('#pay_total').html(raw.summary.pay_total);
+                                $('#due_total').html(raw.summary.due_total);
+                            }
                             return dataSet;
                         },
                     },
@@ -56,15 +61,26 @@ var DatatableRemoteAjaxDemo = function () {
             // columns definition
             columns: [
                 {
-                    field: 'RecordID',
-                    title: '#',
+                    field: 'download',
+                    title: 'PDF',
                     sortable: false, // disable sort for this column
                     width: 40,
                     selector: false,
                     textAlign: 'center',
                 }, {
-                    field: 'customer_id',
-                    title: 'Customer',
+                    field: 'created_at',
+                    title: 'Date',
+                    type: 'date',
+                    format: 'MM/DD/YYYY',
+                },{
+                    field: 'invoice',
+                    title: 'Invoice',
+                },{
+                    field: 'customer_name',
+                    title: 'Customer Name',
+                }, {
+                    field: 'customer.mobile',
+                    title: 'Customer Mobile',
                 }, {
                     field: 'amount',
                     title: 'Amount',
@@ -75,22 +91,17 @@ var DatatableRemoteAjaxDemo = function () {
                     field: 'due',
                     title: 'Due',
                 }, {
-                    field: 'created_at',
-                    title: 'Date',
-                    type: 'date',
-                    format: 'MM/DD/YYYY',
-                }, {
                     field: 'status',
                     title: 'Status',
                     // callback function support for column rendering
-                    template: function (row) {
-                        var status = {
-                            1: {'title': 'Due', 'class': 'm-badge--brand'},
-                            2: {'title': 'Partial', 'class': 'm-badge--info'},
-                            3: {'title': 'Paid', 'class': ' m-badge--success'},
-                        };
-                        return '<span class="m-badge ' + status[row.status].class + ' m-badge--wide">' + status[row.status].title + '</span>';
-                    },
+//                    template: function (row) {
+//                        var status = {
+//                            1: {'title': 'Due', 'class': 'm-badge--brand'},
+//                            2: {'title': 'Partial', 'class': 'm-badge--info'},
+//                            3: {'title': 'Paid', 'class': ' m-badge--success'},
+//                        };
+//                        return '<span class="m-badge ' + status[row.status].class + ' m-badge--wide">' + status[row.status].title + '</span>';
+//                    },
                 }, {
                     field: 'actions',
                     title: 'Actions',

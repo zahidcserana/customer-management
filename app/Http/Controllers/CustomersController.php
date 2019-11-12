@@ -11,10 +11,10 @@ use File;
 use Image;
 use Uuid;
 use Session;
+use Auth;
 
 class CustomersController extends Controller
 {
-
     /*
      * Customer Form
      */
@@ -30,10 +30,12 @@ class CustomersController extends Controller
     public function add(Request $request)
     {
         $data = $request->except('_token');
+        $data['company_id'] = Auth::user()->company_id;
 
         $rules = [
             'name' => 'required|string|max:100',
-            'mobile' => 'required',
+            'mobile' => 'unique:customers,mobile',
+            'email' => 'unique:customers,email'
         ];
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
@@ -117,7 +119,8 @@ class CustomersController extends Controller
         $data = $request->except('_token');
         $rules = [
             'name' => 'required|string|max:100',
-            'mobile' => 'required',
+            'mobile' => 'unique:customers,mobile',
+            'email' => 'unique:customers,email'
         ];
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {

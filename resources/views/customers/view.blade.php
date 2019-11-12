@@ -344,10 +344,10 @@
 
                             <div class="form-group m-form__group row">
                                 <label for="example-color-input" class="col-1 col-form-label">
-                                    Company
+                                    About
                                 </label>
                                 <div class="col-5">
-                                    <input class="form-control m-input" type="text" value="{{$customer->company}}" id="company" name="company">
+                                    <input class="form-control m-input" type="text" value="{{$customer->about}}" id="about" name="about">
                                 </div>
 
                                 <label for="example-color-input" class="col-1 col-form-label">

@@ -68,6 +68,9 @@ var DatatableRemoteAjaxDemo = function () {
                 }, {
                     field: 'email',
                     title: 'Email',
+                },{
+                    field: 'mobile',
+                    title: 'Mobile',
                 }, {
                     field: 'contact_date',
                     title: 'Contact Date',

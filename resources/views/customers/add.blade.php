@@ -138,7 +138,7 @@
                                     Name
                                 </label>
                                 <div class="col-5">
-                                    <input class="form-control m-input" type="text" value="" id="name" name="name">
+                                    <input class="form-control m-input" type="text" value="" id="name" name="name" required>
                                 </div>
                                 <label for="example-search-input" class="col-1 col-form-label">
                                     Email
@@ -150,17 +150,17 @@
 
                             <div class="form-group m-form__group row">
                                 <label for="example-tel-input" class="col-1 col-form-label">
-                                    Telephone
-                                </label>
-                                <div class="col-5">
-                                    <input class="form-control m-input" type="tel" value="" id="phone" name="phone">
-                                </div>
-
-                                <label for="example-number-input" class="col-1 col-form-label">
                                     Mobile
                                 </label>
                                 <div class="col-5">
-                                    <input class="form-control m-input" type="number" value="" id="mobile" name="mobile">
+                                    <input class="form-control m-input" type="number" value="" id="mobile" name="mobile" required>
+                                </div>
+
+                                <label for="example-number-input" class="col-1 col-form-label">
+                                     Telephone
+                                </label>
+                                <div class="col-5">
+                                    <input class="form-control m-input" type="tel" value="" id="phone" name="phone">
                                 </div>
                             </div>
 
@@ -182,10 +182,10 @@
 
                             <div class="form-group m-form__group row">
                                 <label for="example-color-input" class="col-1 col-form-label">
-                                    Company
+                                    About
                                 </label>
                                 <div class="col-5">
-                                    <input class="form-control m-input" type="text" value="" id="company" name="company">
+                                    <input class="form-control m-input" type="text" value="" id="about" name="about" required>
                                 </div>
 
                                 <label for="example-color-input" class="col-1 col-form-label">
