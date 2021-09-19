@@ -72,6 +72,9 @@
                 <td style="text-align: right"> Due</td>
                 <td style="text-align: right"> {{ $account->due}}</td>
             </tr>
+            <tr>
+                <td class="center-item" colspan="4">Powered by: <a href="http://dreamsoftbd.com/">Dream Soft (BD)</a> </td>
+            </tr>
         </table>
     </div>
 </div>
